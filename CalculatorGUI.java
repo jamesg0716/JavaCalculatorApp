@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -23,6 +24,15 @@ public class CalculatorGUI {
 		displayPanel.setPreferredSize(new Dimension(350, 150));
 		displayPanel.setBackground(Color.GRAY);
 		frame.add(displayPanel, BorderLayout.NORTH);
+
+		// Make the textField for the display Panel that will show operations
+		JLabel displayField = new JLabel("");
+		displayField.setPreferredSize(new Dimension(300, 50));
+		displayField.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		displayField.setOpaque(true);
+		displayField.setBackground(Color.WHITE);
+		displayField.setLayout(new FlowLayout(FlowLayout.CENTER));
+		displayPanel.add(displayField);
 
 		// Making Calculator Buttons
 		JButton numOne = new JButton("1");
